@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MultiCal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/582bbb717c.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./js.png" >
+<style>
+  #navbtn:hover {
+      background-color: white;
+      border-radius: 5px;
+      color: #4c9ba5fb;
+      transition: 1s; 
+      margin: 2px;
+    }
+    #navbtn {
+      color: white;
+      margin: 2px;
+    }
+    #navbtnActive {
+      background-color: white;
+      border-radius: 5px;
+      color: #4c9ba5fb;
+      margin: 2px;
+    }
+#mt1
+{
+  width:135px;
+  height:91px ;
+  margin-left: 30px;
+  margin-top: 15px;
+  border-radius: 8px;
+  float: left;
+}
+#mt2
+{
+  width:135px;
+  height: 91px;
+  margin-left: 100px;
+  margin-top: 15px;
+  border-radius: 8px;
+  float:left;
+  
+}
+input
+ {
+   font-size: 15px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   margin-left: 11px;
+   width: 55px;
+   height: 28px;
+   border: none;
+   border-radius: 30px;
+   background-color:white;
+   box-shadow:  inset -3px -3px 7px rgba(255, 255, 255, 0.356),
+                 3px 3px 5px rgba(0, 0, 0, 0.582) ;
+   cursor: pointer;
+   outline: none;
+ }
+ input:hover{background-color: orange;}
+ #mta
+ {
+     margin-left: 3px;
+     width:185px;
+     height: 130px;
+     border:none;
+     box-shadow: -3px -3px 7px rgba(27, 26, 26, 0.088),
+              3px 3px 5px rgba(251, 246, 246, 0.469) ;
+     border-radius: 10px;
+     background:rgb(1,6,50);
+     color:white;
+ }
+ #button
+{
+  float:left;
+  height:100px;
+  width:90px;
+  margin-top: -137px;
+  margin-left: 300px;
+}
+button.d1
+ {
+	 margin:2px;
+	 font-family: Arial, Helvetica, sans-serif;
+	 border: none;
+	 background:rgb(1,6,50);
+   color:white;
+   border-radius: 30px;
+	 width: 65px;
+	 height: 40px;
+   font-size: 15px;
+   box-shadow: -3px -3px 7px rgba(24, 23, 23, 0.356),
+              3px 3px 5px rgba(251, 248, 248, 0.891) ; 
+   cursor: pointer;
+ }
+ .d1:active
+ {
+   background-image:radial-gradient(rgb(221, 224, 26),rgb(230, 91, 36));
+   box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.356),
+              inset 3px 3px 5px rgba(0, 0, 0, 0.582) ;
+   transform: translateY(1.5px);
+ }
+ #ansM
+{
+  margin-top: -108px;
+  margin-left: 540px;
+  width:210px;
+  height: 140px;
+  border-radius: 8px;
+}
+#matrix
+{
+   background:#343F4F;
+   border:0.2px solid black;
+   border-radius:30px;
+   height: 875px;
+   width:900px;
+   margin:auto;
+}
+span
+{
+    margin:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 18px;
+}
+#power
+{
+    width:35px;
+    height: 20px;
+}
+#display
+{
+  margin-top: 30px;
+  margin-left: 50px;
+  background-color:rgb(1,6,50);
+  height:200px;
+  width:800px;
+  border: 2px solid white;
+  border-radius: 22px;
+}
+#formx
+{
+  margin-top: 15px;
+  margin-left: 50px;
+  width:96px;
+  height: 80px;
+  float:left;
+}
+
+#inpu
+{
+  background: rgb(1,6,50);
+  width:800px;
+  height:600px;
+  border:2px solid white;
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+p,li
+{
+  margin-left:30px;
+}
+
+#ehead
+{
+   background:#343F4F;
+   align-items: center;
+   color: white;
+}
+#normal
+{
+  margin-top: 170px;
+  margin-left: 455px;
+}
+button.numb
+{
+  width:50px;
+  height: 48px;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+	border: none;
+  background: rgb(1,6,50);
+  border-radius: 35px;
+  margin:6px;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: -3px -3px 7px rgba(34, 33, 33, 0.356),
+              3px 3px 5px rgba(253, 252, 252, 0.844) ;
+  cursor: pointer;
+  outline: none;
+}
+.numb:active
+{
+  background-image:radial-gradient(rgb(221, 224, 26),rgb(230, 91, 36));
+  box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.356),
+              inset 3px 3px 5px rgba(0, 0, 0, 0.582) ;
+  transform: translateY(1.5px);
+}
+#disp
+{
+  width:357px;
+  height:85px;
+  border:none;
+  outline: none;
+  border-radius: 13px;
+  margin-left: 5px;
+  margin-top: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: snow;
+  box-shadow: -3px -3px 7px rgba(46, 15, 15, 0.4),
+              3px 3px 5px rgba(0, 0, 0, 0.582) ;            
+}
+#btnleft
+{
+  width:400px;
+  height:270px;
+  margin-left: -335px;
+  margin-top: 157px;
+  
+}
+#eqaul
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  background:  rgb(1,6,50);
+  color:aliceblue;
+  margin-left:5px;
+  margin-top: 25px;
+  border:none;
+  border-radius: 30px;
+  height: 43px;
+  width:73px;
+  margin:6px;
+  box-shadow: -3px -3px 7px rgba(22, 22, 22, 0.356),
+              3px 3px 5px rgba(252, 246, 246, 0.898) ;
+  cursor: pointer;
+  outline: none;
+}
+#eqaul:active
+{
+  background-image:radial-gradient(rgb(221, 224, 26),rgb(230, 91, 36));
+  box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.356),
+              inset 3px 3px 5px rgba(69, 68, 68, 0.599) ;
+  transform: translateY(1.5px);
+}
+#formy
+{
+  background:rgb(1,6,50);
+  border: none;
+  border-radius: 12px;
+  width:335px;
+  height:95px;
+  margin-left: 10px;
+  margin-top: -285px;
+  box-shadow: -3px -3px 7px rgba(49, 47, 47, 0.905),
+              3px 3px 5px rgba(255, 254, 254, 0.918) ;
+  color:white;
+}
+input.ab
+{
+   width: 50px;
+   height: 25px;
+   border:none;
+   border-radius: 30px;
+   background-color:white;
+   box-shadow:inset -3px -3px 7px rgba(255, 255, 255, 0.356),
+              3px 3px 5px rgba(0, 0, 0, 0.582) ;
+}
+.ab:hover{background-color: orange;}
+#sel2
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  background:#343F4F;
+  width:140px;
+  height:35px;
+  padding-left: 7px;
+  outline: none;
+  border:none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 5px;
+  /*box-shadow: inset -3px -3px 7px rgba(39, 38, 38, 0.66),
+              3px 3px 5px rgba(248, 244, 244, 0.333);*/
+}
+#sel2:hover{background-image:  linear-gradient(rgb(197, 236, 24),rgb(221, 159, 26));}
+#sel2:active{transform: translateY(1px);}
+.sel
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  background:rgb(1,6,50);
+  color:white;
+  outline: none;
+  width:105px;
+  height:38px;
+  border:none;
+  box-shadow: -3px -3px 7px rgba(52, 51, 51, 0.356),
+              3px 3px 5px rgba(253, 249, 249, 0.891) ;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.sel:hover{background-image:  linear-gradient(rgb(197, 236, 24),rgb(221, 159, 26));}
+.sel:active{transform: translateY(1px);}
+#infobtn
+{
+  margin-left: 45%;
+  margin-top: 12px;
+  width:200px;
+  height:60px;
+  background-color:rgb(1,6,49);
+  color:white;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: -3px -3px 7px rgba(52, 51, 51, 0.356),
+              3px 3px 5px rgba(253, 249, 249, 0.891) ;
+}
+#hidebtn
+{
+  width:30px;
+  height: 30px;
+  background-color: tomato;
+  display: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+dialog
+{
+  display: none; width:540px; height:500px;
+  overflow: hidden;
+  overflow-y: scroll;
+  font-size: 27px;
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  background-color: #343F4F;
+  font-weight: bold;
+}
+</style>
+</head>
+<body bgcolor="rgb(1,6,39)">
+  <header class="sticky-top shadow">
+    <nav class="navbar  navbar-expand-sm" style="background-color: #4c9ba5fb;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: white;">JS PROJECT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" id="navbtn" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="navbtn" href="01_simple_cal.html">Simple Cal</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navbtn" href="01_eqfind.html">Eqn Find</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navbtn" href="01_eqsolver.html">Eq Solver</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navbtnActive" href="#">MultiCal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navbtn" href="01_states.html">Statistic</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  </header>
+    <div id="ehead">
+     <hr>
+      <h1 align="center"><stong>MultiCalculator</stong></h1>
+     <hr>
+     </div>
+    <br>
+    <div id="matrix">
+        <div id="display">
+            <span id="res"></span>
+            <input type="text" id="disp" readonly >
+            <div id="ansM">
+                <table id="mta">
+                    <tr>
+                     <td><span id="Ansa"></span></td>
+                     <td><span id="Ansb"></span></td>
+                    </tr>     
+                    <tr>
+                     <td><span id="Ansc"></span></td>
+                     <td><span id="Ansd"></span></td>
+                    </tr>
+                    </table>
+            </div>
+      </div>
+      <div id="inpu">
+        <div id="formx">
+            <button class="sel" onclick="matPow()">A<sup>N</sup></button>
+        </div>
+        <div id="mt1">
+            <table id="mta">
+            <th>A=</th>
+            <tr>
+             <td><input type="number" id="ma1" class="matrix" ></td>
+             <td><input type="number" id="mb1" class="matrix"></td>
+            </tr>     
+            <tr>
+             <td><input type="number" id="mc1" class="matrix"></td>
+             <td><input type="number" id="md1" class="matrix"></td>
+            </tr>
+            </table>
+         </div>
+         
+         <div id="mt2">
+           <table id="mta">
+            <th>B=</th>
+            <tr>
+             <td><input type="number" id="ma2" class="matrix"></td>
+             <td><input type="number" id="mb2" class="matrix" ></td>
+            </tr>     
+            <tr>
+             <td><input type="number" id="mc2" class="matrix"></td>
+             <td><input type="number" id="md2" class="matrix"></td>
+            </tr>
+           </table>
+         <div id="button">
+            <button onclick="matrixFs('plus')" class="d1"><b>A + B</b></button>
+            <button onclick="matrixFs('minus')" class="d1"><b>A - B</b></button>
+            <button onclick="matrixFs('multi')" class="d1"><b>AB</b></button>
+          </div>
+          <dialog  open>
+            <button id="hidebtn" onclick="info('x')">X</button><br><br>
+                   <b>1 . Matrix</b> <br><br>
+                   Insert values in Matrix A and B by your keyboard <br>
+                   For Addition click on A+B<br>
+                   For Substraction click on  A-B<br>
+                   For Multiplication click on AB <br>
+                 
+                   for finding any power of matrix , A<sup>N</sup> <br>
+                   Insert values in A , then click on A<sup>N</sup> button.<br>
+                   then it ask you value of N , enter it . <br>
+                   N can be anyvalue , 1,2,3 .. you can also find A<sup>1.5</sup><br>
+                   A<sup>2.3</sup>A<sup>0.5</sup>A<sup>-1.3</sup><br>
+                   for inverse of A ,(A<sup>-1</sup>) enter N = -1<br><br>
+                   <b>2 . Series Sum </b><br><br>
+                   select function , that you want to sum up<br>
+                  <b>Exp.</b><br>
+                    you want to sum n=1 to n=8 on sin(5n-2) ,<br>
+                    select sin(aN+b),enter a=5,n=8,b=-2.<br>
+                    then click on &sum;f(x) for Ans <br>
+                    same as for other functions.<br><br>
+                    <b>3 . Scientific calsi </b><br><br>
+                    Remaining calsi is normal scientific calsi <br>
+                    if yoo press "log(x)" it will show ' Math.log( ' in display<br>
+                     then enter value ( by calsi's keyboard ) and close the bracket. exp: Math.log(8)<br>
+                    then click on ' = ' for ans .<br>
+                    you can also find factorial of any number > 0 .<br>
+                    exp : 3! , 4.5! , 3.86! , 0.23! <br>
+                    Enter number on display by calsi's keyboard and press ' ! '  button <br><br>
+                    click on red X button above to close this !<br><br>
+                    Thanks . Hope you Enjoy our Work &#128512;
+
+                  
+          </dialog>
+          <div id="btnleft">
+          <button onclick="selectPow()" id="eqaul">&sum;f(x)</button>
+          <button onclick="simpc('Math.log(')" id="eqaul">log(x)</button>
+          <button onclick="simpc('Math.tan(')" id="eqaul">tan(x)</button>
+          <button onclick="simpc('Math.atan(')" id="eqaul">tan<sup>-1</sup>(x)</button><br>
+          <button onclick="simpc('Math.sin(')" id="eqaul">sin(x)</button>
+          <button onclick="simpc('Math.asin(')" id="eqaul">sin<sup>-1</sup>(x)</button>
+          <button onclick="simpc('Math.cos(')" id="eqaul">cos(x)</button>
+          <button onclick="simpc('Math.acos(')" id="eqaul">cos<sup>-1</sup>(x)</button><br>
+          <button onclick="clearVal()" id="eqaul">ClrAll</button>
+          <button onclick="simpc('Math.exp(')" id="eqaul">e<sup>x</sup></button>
+          <button class="numb" onclick="simpc('Math.PI')">&Pi;</button>
+          <button class="numb" onclick="simpc('Math.E')">e</button>
+          <button class="numb" onclick="simpc('!')"> ! </button><br>
+          <form id="formy" name="f2">
+            <font style="font-weight: bold;margin-left: 4px;">N = 1 to X </font><span style="font-size: 23px;"> &sum; </span>
+            <select name="funs" id="sel2">
+              <option>Function(N)</option>
+              <option value="sin">sin(aN+b)</option>
+              <option value="sin2">(sin(aN+b)^2)</option>
+              <option value="cos">cos(aN+b)</option>
+              <option value="sin2">(cos(aN+b)^2)</option>
+              <option value="xi">1/(N+a)</option>
+              <option value="x2i">1/(N^2)</option>
+           </select><br><br>
+           <font style="font-weight: bold;margin-left: 4px;">a = </font> <input type="number" id="A" class="ab">
+           <font style="font-weight: bold;margin-left: 4px;">b = </font> <input type="number" id="B" class="ab">
+           <font style="font-weight: bold;margin-left: 4px;">N=X = </font> <input type="number" id="N" class="ab">
+          </form>
+          </div>
+         </div>
+         <div id="normal">
+           <button class="numb" onclick="simpc('1')">1</button>
+           <button class="numb" onclick="simpc('2')">2</button>
+           <button class="numb" onclick="simpc('3')">3</button>
+           <button class="numb" onclick="simpc('+')">+</button>
+           <button class="numb" onclick="simpc('sqr')"> x<sup>2</sup></button><br>
+           <button class="numb" onclick="simpc('4')">4</button>
+           <button class="numb" onclick="simpc('5')">5</button>
+           <button class="numb" onclick="simpc('6')">6</button>
+           <button class="numb" onclick="simpc('-')">-</button>
+           <button class="numb" onclick="simpc('sqrt')"> &radic;x </button><br>
+           <button class="numb" onclick="simpc('7')">7</button>
+           <button class="numb" onclick="simpc('8')">8</button>
+           <button class="numb" onclick="simpc('9')">9</button>
+           <button class="numb" onclick="simpc('*')">*</button>
+           <button class="numb" onclick="simpc('Math.pow(')">a<sup>b</sup></button><br>
+           <button class="numb" onclick="simpc('%')">%</button>
+           <button class="numb" onclick="simpc('0')">0</button>
+           <button class="numb" onclick="simpc('.')">.</button>
+           <button class="numb" onclick="simpc('/')">/</button>
+           <button class="numb" onclick="simpc(',')">,</button><br>
+           <button class="numb" onclick="simpc('ac')">AC</button>
+           <button class="numb" onclick="simpc('back')">&larr;</button>
+           <button class="numb" onclick="simpc('=')">=</button>
+           <button class="numb" onclick="simpc('(')">(</button>
+           <button class="numb" onclick="simpc(')')">)</button><br>
+         </div>
+      </div>
+    </div>
+    <button id="infobtn" onclick="info('o')">Learn how to use ! </button>
+</body>
+<script src="./multical.js"></script>
+</html>

@@ -1,0 +1,565 @@
+<html>
+<head>
+  <title>States</title>
+  <link rel="icon" href="./js.png">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+    #Hover:hover {
+        background-color: white;
+        border-radius: 5px;
+        color: #4c9ba5fb;
+        transition: 1s; 
+        margin: 2px;
+      }
+      #Hover {
+        color: white;
+        margin: 2px;
+      }
+      #navbtnActive {
+        background-color: white;
+        border-radius: 5px;
+        color: #4c9ba5fb;
+        margin: 2px;
+      }
+      #text {
+        background-color: #4c9ba5fb; 
+        padding: 50px; 
+        width: fit-content;
+        height: fit-content;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      #classedata 
+         {
+             background-color: #4c9ba5fb;
+             margin: auto;
+             width :625px;
+             border-radius: 12px;
+             box-shadow: -3px -3px 7px rgba(0, 0, 0, 0.06),
+                         3px 3px 5px rgba(0, 0, 0, 0.582) ;
+             
+         }
+         #unclass
+        {
+            width:550px;
+            margin: auto;
+            background-color: #4c9ba5fb;
+            padding: 10px;
+            border:none;
+            border-radius: 12px;
+            box-shadow: -2px -2px 5px rgba(0,0,0, 0.07),
+                          2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+      #crdiv {
+        width:fit-content;
+        height: fit-content;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        border-radius: 35px;
+        margin:6px;
+        font-weight: bold;
+        box-shadow: -3px -3px 7px #ffffff5b,
+                    3px 3px 5px #00000094 ;
+        cursor: pointer;
+        outline: none;
+      }
+      #dldiv {
+        width: fit-content;
+        height: fit-content;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        border-radius: 35px;
+        margin:6px;
+        font-weight: bold;
+        box-shadow: -3px -3px 7px #ffffff5b,
+                    3px 3px 5px #00000094 ;
+        cursor: pointer;
+        outline: none;
+      }
+      #ungp,#gp,#uncl
+         {
+             width: fit-content;
+             height: fit-content;
+             border:none;
+             border-radius: 12px;
+             font-weight: bold;
+             cursor: pointer;
+             font-family: Arial, Helvetica, sans-serif;
+             box-shadow: -3px -3px 7px #ffffff5b,
+                    3px 3px 5px #00000094 ;
+         }
+        #links {
+            display: inline-block;
+        }
+        #content1 {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 30px;
+        }
+        #content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #btn_text {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+        }
+        #btn:hover {
+            height: 85px;
+            width: 245px;
+            border-radius: 20px;
+            padding: auto;
+            background-color: #555555;
+            border-color: #555555;
+        }
+        #btn {
+            height: 70px;
+            width: 200px;
+            border-radius: 20px;
+            padding: auto;
+        }
+         body{
+             background:snow;
+         }
+         span
+         {
+             color:rgb(6, 6, 80);
+         }
+         #data2,#dldiv,#gp
+         {
+            display: none;
+         }
+         #data1
+         {
+            display: none;
+            width: fit-content;
+            height: fit-content;
+            background-color: #4c9ba5fb;
+            color: white;
+            border-radius: 12px;
+            box-shadow: -3px -3px 7px #ffffff5b,
+                  3px 3px 5px #00000094 ;
+         }
+         input
+         {
+           font-size: 18px;
+           font-weight: bold;
+           font-family: Arial, Helvetica, sans-serif;
+           width:90px;
+           height:35px;
+           border-radius: 25px;
+           border:none;
+           outline: none;
+           margin:8px;
+           box-shadow: inset -3px -3px 7px rgba(10, 10, 95, 0.09),
+                        inset  3px 3px 5px rgba(0, 0, 0, 0.582) ;
+         }
+         input:hover{ box-shadow:  inset -3px -3px 7px rgba(255, 255, 255, 0.068),
+                                    3px 3px 5px rgba(0, 0, 0, 0.582) ;}
+         #sp1,#sp2
+         {
+             margin-left: 10px;
+             color: black;
+             font-size: 18px;
+             font-weight: bold;
+             font-family: Arial, Helvetica, sans-serif;
+         }
+         #sp3
+         {
+             margin-left: 28px;
+             color: black;
+             font-size: 18px;
+             font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+         }
+         .classBT
+         {
+           margin:10px;
+           margin-left: 70px;
+           width:120px;
+           height: 40px;
+           font-size: 15px;
+           font-weight: bold;
+           font-family: Arial, Helvetica, sans-serif;
+           border-radius: 18px;
+           border:none;
+           background-color:snow;
+           box-shadow: inset -3px -3px 7px rgba(0,0,0, 0.07),
+                       inset   3px 3px 5px rgba(0, 0, 0, 0.582) ;
+         }
+         .classBT:hover{background-color: #d3d3d31a;
+            box-shadow:inset -3px -3px 7px rgba(255, 255, 255, 0.068),
+                         3px 3px 5px rgba(0, 0, 0, 0.582) ;       
+         }
+         .classBT:active
+        {
+            background-image:radial-gradient(white,lightgrey);
+            box-shadow:  -3px -3px 7px rgba(255, 255, 255, 0.356),
+                         3px 3px 5px rgba(0, 0, 0, 0.582) ;
+            transform: translateY(1.5px);
+            font-size: 13px;
+        }
+        .nextF
+        {
+            background-color: snow;
+           font-size: 20px;
+           font-weight: bold;
+           font-family:Arial, Helvetica, sans-serif;
+           border-radius: 19px;
+           border:none;
+           box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.068),
+                         2px 2px 5px rgba(0, 0, 0, 0.582) ;
+        }
+        .nextF:hover{background-color: lightgrey;
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.068),
+                        inset  2px 2px 5px rgba(0, 0, 0, 0.582) ;
+        }
+        .nextF:active
+        {
+            background-image:radial-gradient(white,lightgrey);
+            box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.356),
+                        inset 3px 3px 5px rgba(0, 0, 0, 0.582) ;
+            transform: translateY(1.5px);
+        }
+        #table2,#table1
+        {
+            display: none;
+           font-family: Arial, Helvetica, sans-serif;
+           font-weight: bold;
+           margin-left:25px;
+           padding: 8px;
+          /* border-collapse: collapse;*/
+           border-radius: 12px;
+           border:none;
+           box-shadow:-3px -3px 7px rgba(0,0,0, 0.05),
+                        3px 3px 5px rgba(0, 0, 0, 0.582) ;
+        }
+        tr
+        {
+            border:1px solid black;
+            border-radius: 6px;
+            margin:7px;
+        }
+        td
+        {
+            height:30px;
+            background-color: rgba(211, 211, 211, 0.4);
+            text-align: center;
+            border:none;
+            border-radius: 9px;
+            margin:7px; 
+            box-shadow: inset -2px -2px 5px rgba(0,0,0,0.05),
+                        inset  2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+        td:hover{background-color: snow;
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.068),
+                        inset  2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+        .resl,#int,#clsn
+        {
+            margin-left: 18px;
+            color: black;
+           font-size: 18px;
+           font-weight: bold;
+           font-family: Arial, Helvetica, sans-serif;
+        }
+        #answ,#answ2
+        {
+            display: none;
+            width: fit-content;
+            margin-left: 25px;
+            margin-top: 10px;
+            padding: 10px;
+            border:none;
+            border-radius: 12px;
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.068),
+                        inset  2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+        #demon
+        {
+            display: none;
+            width:490px;
+            height:250px;
+            overflow: hidden;
+            overflow-y: scroll;
+            margin-left: 25px;
+            margin-top: 10px;
+            padding: 10px;
+            border:none;
+            border-radius: 12px;
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.068),
+                        inset  2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+        #hide
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            background-image:linear-gradient(red,white);
+            width: 20px;
+            height: 20px;
+            border:none;
+            border-radius: 12px;
+            box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.068),
+                        inset  2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+        #show
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 15px;
+            width: 80px;
+            height: 30px;
+            border:none;
+            border-radius: 16px;
+            box-shadow:  -2px -2px 5px rgba(255, 255, 255, 0.068),
+                          2px 2px 2px rgba(0, 0, 0, 0.582) ;
+        }
+        #darkM
+        {
+            width:fit-content;
+            height: fit-content;
+            font-family: Arial, Helvetica, sans-serif;
+            border: none;
+            border-radius: 35px;
+            margin:6px;
+            font-weight: bold;
+            box-shadow: -3px -3px 7px #ffffff5b,
+                        3px 3px 5px #00000094 ;
+            cursor: pointer;
+            outline: none;
+            font-weight: bold;
+            border:none;
+            border-radius: 25px;
+        }
+        #lightM
+        {
+            width:fit-content;
+            height: fit-content;
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            border:none;
+            border-radius: 25px;
+            box-shadow: -3px -3px 7px #ffffff5b,
+                        3px 3px 5px #00000094 ;
+        }
+        #clsn,#clno
+        {
+            display: none;
+        }
+        #cltype
+        {
+            width:140px;
+            height:40px;
+            border:none;
+            border-radius: 12px;
+            box-shadow:  -2px -2px 5px rgba(255, 255, 255, 0.068),
+                          2px 2px 2px rgba(0, 0, 0, 0.582) ;
+            font-size: 19px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            outline: none;
+        }
+  </style>
+</head>
+<body style="background:#F3F3F3">
+ <header class="sticky-top shadow">
+        <nav class="navbar  navbar-expand-sm" style="background-color: #4c9ba5fb;">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: white;">JS PROJECT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" id="Hover" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="Hover" href="01_simple_cal.html">Simple Cal</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="Hover" href="01_eqfind.html">Eqn Find</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="Hover" href="01_eqsolver.html">Eqn Solver</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="Hover" href="01_MultiCal.html">Multi Cal</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="navbtnActive" href="#">Statistic</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+ </header>
+ <div class="container" id="text">
+    <span style="color: white;" id="x5" class="resl">Change Your Data Type to.. = </span>
+    <button id="ungp" onclick="selectype('ungp')">UN-GROUPED</button>
+    <button id="gp" onclick="selectype('gp')">GROUPED</button><br>
+    <div id="data2">
+        <span><b> Number of items N= </b></span><input type="text" id="num2"><br><br>
+        <button onclick="mean('2')">ANS</button><br><br>
+        <span id="items2"></span><br>
+        <span id="itemsort2"></span><br>
+        <span id="sum2"></span><br>
+        <span id="Mean2"></span><br>
+        <span id="Median2"></span><br>
+        <span id="sigma2"></span><br>
+        <span id="cv2"></span>
+    </div><br>
+    <button id="darkM" onclick="theme('dark')" style="color: black;"> Dark Mode </button>
+    <button id="lightM" onclick="theme('light')" style="color: black;"> Light Mode </button>
+    <span id="x3" class="resl"><b style="color: white;">Learn how to use.. </b></span>
+    <button id="show" onclick="showinfo()" style="color: black;">Show</button>
+    <div  id="demon" style="background-color: #23cfe6fa; color: white;">
+        <b>Hide</b><button id="hide" onclick="hideinfo()">X</button><br><br>
+       <b> 1 : Uniformed class example</b>
+     <table border="1" id="demo" style="border-radius: 12px; border:none;">
+        <tr>
+            <td>Class</td>     
+            <td>f</td>
+        </tr>
+        <tr>
+            <td><u>10</u>-25</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>25-40</td>
+            <td>36</td>
+       </tr>
+        <tr>
+            <td>40-55</td>
+            <td>42</td>
+        </tr>
+        <tr>
+            <td>55-<u>70</u></td>
+            <td>26</td>
+        </tr>
+    </table><br>
+    <b> 2 : Non-Uniformed class exp..</b><br><br>
+    <table border="1" id="demo" style="border-radius: 12px; border:none;">
+        <tr>
+            <td>Class</td>     
+            <td>f</td>
+        </tr>
+        <tr>
+            <td>10-25</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>30-40</td>
+            <td>36</td>
+       </tr>
+        <tr>
+            <td>40-60</td>
+            <td>42</td>
+        </tr>
+        <tr>
+            <td>65-70</td>
+            <td>26</td>
+        </tr>
+    </table><br>
+    <b> for Uniformed ..</b><br>
+    <p> Your quetion look like above Data (1.Uniformed) . for implement it <br>
+         write <b>10</b> in "class start with "box <br>
+         write <b>70</b> in "class end with "box <br>
+         write <b>15</b> in "class lenghth" box (:: 25-10)<br>
+         When you press "classed data" button . it will ask you frequency <br>
+         value for each class . input value of it . & DONE .!!<br>
+         press <b>>></b> button for focus on next input field
+    </p><br>
+    <b>for Non-uniformed .. </b><br>
+    <p>
+        Your quetion look like above Data (2.non-Uniformed) . for implement it <br>
+        enter how many classes are there <br>
+        then click on "<b>classed data</b>" <br>
+        it will ask you all classes , enter it as it is example.. <br>
+        if class id 13-43 , then enter 13-43 as it is .<br>
+        then it will ask freqency . add it as it is.
+    
+    </p>
+    </div>
+ </div>
+
+ <div class="container" id="data1">
+    <h4>For comparison to data set, create another database for comparison.</h4>
+    <button id="crdiv" onclick="createDiv('crt')">create DB</button>
+    <button id="dldiv" onclick="createDiv('del')">delete DB</button><br><br>
+    <span><b style="color: white;"> Number of items N= </b></span><input type="text" id="num"><br><br>
+   <button id="crdiv" onclick="mean('')">ANS</button><br><br>
+   <span id="items" style="color: white;"></span><br>
+   <span id="itemsort" style="color: white;"></span><br>
+   <span id="sum" style="color: white;"></span><br>
+   <span id="Mean" style="color: white;"></span><br>
+   <span id="Median" style="color: white;"></span><br>
+   <span id="sigma" style="color: white;"></span><br>
+   <span id="cv" style="color: white;"></span>
+</div><br>
+
+<div class="container" id="grpData">
+<div class="container" id ="classedata" style="padding-bottom: 20px;"><br><br>
+<form name="f">
+   <label id="int" style="color: white;">Class type : </label>
+   <select name="s" onchange="classtype()" id="cltype">
+        <option value="Uniformed">Uniformed</option>
+        <option value="Non-Uniformed">Non-Uniformed </option>
+   </select><br>
+</form>
+
+<label id="clsn" style="color: white;">Enter how many class there  = </label><input type="text" id="clno"><br>
+<span id="sp1" style="color: white;">Class start with = </span><input type="text" id="1"> <button onclick="onFocus('2')" id="2x" class="nextF">>></button><br>
+<span id="sp2" style="color: white;">Class End with = </span><input type="text" id="2">  <button onclick="onFocus('3')" id="3x" class="nextF">>></button><br>
+<span id="sp3" style="color: white;">Class length = </span><input type="text" id="3">  <button onclick="onFocus('4')" id="4x" class="nextF">>></button><br>
+<br><button onclick="classedata()" id="5" class="classBT" >Classed Data</button><br>
+<table border="1" id="table2" style="background-color: #23cfe6fa;">
+    <tr>
+        <td>Class</td>
+        <td>x</td>
+        <td>f</td>
+        <td>cf</td>
+        <td>fx</td>
+        <td>x<sup>2</sup></td>
+        <td>fx<sup>2</sup></td>
+    </tr>
+</table>
+<div id="answ" style="background-color: #23cfe6fa;">
+<span id="tmean"class="resl"></span><br><br>
+<span id="tmid" class="resl"></span><br><br>
+<span id="tmod" class="resl"></span><br><br>
+<span id="tdev" class="resl"></span><br><br>
+<span id="tcv"  class="resl"></span><br><br>
+<span id="tsk"  class="resl"></span><br>
+</div>
+</div><br><br>
+<div id="unclass">
+<h4 id="x2" class="int" style="color: white;">For unclassed data type ... </h4>
+<br><span id="x1" class="resl"><b style="color: white;"> Number of items N= </b></span><input type="text" id="numt"><br><br>
+<button onclick="groupData()" id="uncl"> Ans </button><br><br>
+<table border="1" id="table1" style="background-color: #23cfe6fa;">
+    <tr>
+        <td>x</td>
+        <td>f</td>
+        <td>f x</td>
+        <td>x<sup>2</sup></td>
+        <td>f x<sup>2</sup></td>
+    </tr>
+</table>
+<div id="answ2" style="background-color: #23cfe6fa;">
+  <span id="t1mean" class="resl"></span><br><br>
+  <span id="t1dev"  class="resl"></span><br><br>
+  <span id="t1cv"  class="resl"></span><br>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="states.js"> </script>  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
+</html>

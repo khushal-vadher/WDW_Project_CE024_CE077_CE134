@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>JS PROJECT</title>
+     <link rel="icon" href="./js.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/582bbb717c.js" crossorigin="anonymous"></script>
+<style>
+  body{
+    background-image: url("./bg_index.jpg");
+  }
+  #Hover:hover {
+   background-color: white;
+   border-radius: 5px;
+   color: #4c9ba5fb;
+   transition: 1s; 
+   margin: 2px;
+  }
+  #Hover {
+    color: white;
+    margin: 2px;
+  }
+  #navbtnActive {
+      background-color: white;
+      border-radius: 5px;
+      color: #4c9ba5fb;
+      margin: 2px;
+  }
+  #links {
+  display: inline-block;
+  }
+  #content1 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  }
+  #content {
+  text-align: center;
+  margin-bottom: 30px;
+  }
+  #btn_text {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  }
+  #btn:hover {
+  height: 85px;
+  width: 245px;
+  border-radius: 20px;
+  padding: auto;
+  background-color: #4c9ba5fb;
+  border-color: #4c9ba5fb;
+  }
+  #btn {
+  height: 70px;
+  width: 200px;
+  border-radius: 20px;
+  background-color: #4c9ba5fb;
+  border-color: #4c9ba5fb;
+  padding: auto;
+  }
+</style>
+</head>
+<body >
+  <header class="sticky-top shadow">
+    <nav class="navbar  navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">JS PROJECT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" id="Hover" href="01_simple_cal.html">Simple Cal</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_eqfind.html">Eqn Find</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_eqsolver.html">Eq Solver</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_MultiCal.html">Multi Cal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_states.html">Statistic</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  </header>
+      
+      <div class="container" id="content1">
+        <div class="container" id="content">
+          <button type="button"  class="btn btn-secondary" id="btn"><a id="btn_text" href="01_simple_cal.html" style="font-size: 22px;">Simple Calculator</a></button>
+        </div>
+        <button type="button"  class="btn btn-secondary" id="btn"><a id="btn_text" href="01_eqfind.html">Eqn Find</a></button>
+      </div>
+      <div class="container" id="content">
+        <button type="button"  class="btn btn-secondary" id="btn"><a id="btn_text" href="01_eqsolver.html">Eqn Solvser</a></button>
+      </div>
+      <div class="container" id="content">
+        <button type="button"  class="btn btn-secondary" id="btn"><a id="btn_text" href="01_MultiCal.html">Multi Cal</a></button>
+      </div>
+      <div class="container" id="content">
+        <button type="button"  class="btn btn-secondary" id="btn"><a id="btn_text" href="01_states.html">Statistic</a></button>
+      </div>
+</body>
+</html>

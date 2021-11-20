@@ -1,0 +1,330 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./js.png">
+
+    <title>EqSolver</title>
+
+    <style>
+      #Hover:hover {
+        background-color: white;
+        border-radius: 5px;
+        color: #4c9ba5fb;
+        transition: 1s; 
+        margin: 2px;
+      }
+      #Hover {
+        color: white;
+        margin: 2px;
+      }
+      #navbtnActive {
+        background-color: white;
+        border-radius: 5px;
+        color: #4c9ba5fb;
+        margin: 2px;
+      }
+      #text {
+        width: fit-content;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: #4c9ba5fb;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+      }
+      #text1 {
+        width: fit-content;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      #calBox {
+        background-color: #4c9ba5fb;
+        height: 765px;
+        width: 800px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 12px;
+        box-shadow: -3px -3px 7px #ffffff5b,
+               3px 3px 5px #00000094 ;
+      }
+      
+      #inputBox {
+        background-color:#d3d3d3;
+        padding: 20px;
+        width:700px;
+        color: black;
+        border: 2px solid white;
+        border-radius: 8px;
+      }
+      #simps
+      {
+        margin:auto;
+        border: 2px solid white;
+        border-radius: 8px;
+        background-color: #23cfe6fa;
+        width:700px;
+        margin-bottom: 30px;
+        padding: 20px;
+      }
+      button.next
+      {
+        width:50px;
+        height: 48px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        background: #23cfe6fa;
+        color: black;
+        border-radius: 35px;
+
+        margin:6px;
+        margin-right: 20px;
+        font-size: 22px;
+        font-weight: bold;
+        box-shadow: -3px -3px 7px #ffffff5b,
+                    3px 3px 5px #00000094 ;
+        cursor: pointer;
+        outline: none;
+      }
+      .next:active
+      {
+        background-image:radial-gradient(#dde01a,#e65b24);
+        box-shadow: inset -3px -3px 7px #ffffff5b,
+              inset 3px 3px 5px #00000094 ;
+        transform: translateY(1.5px);
+      }
+      #calBtn {
+        width: 100px;
+        color: black;
+        margin-right: 6px;
+      }
+
+      #show {
+        background-color: #D3D3D3; 
+        border-color: #D3D3D3;
+      }
+      #howit
+      {
+        width: fit-content;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: none;
+      }
+      #hide
+      {
+        background-color: grey; 
+        border-color: grey;
+      }
+      #hide_con {
+        background-color: #D3D3D3; 
+        border-color: #D3D3D3;
+      }
+      
+              
+      
+      .eqni
+      {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        margin:20x;
+        width:475px;
+        height:40px;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.068),
+        3px 3px 5px rgba(0, 0, 0, 0.582) ;
+      }
+      #inpux
+      {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        width:70px;
+        height:35px;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.068),
+        3px 3px 5px rgba(0, 0, 0, 0.582) ;
+      }
+      p
+      {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        display:inline;
+        margin-left: 10px;
+      }
+      .res
+      {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 10px;
+        margin-left: 10px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.068),
+        3px 3px 5px rgba(0, 0, 0, 0.582) ;
+        background:cornflowerblue;
+      }
+      #dx
+      {
+        display: inline;
+        margin-left: 10px;
+      }
+      #sel
+      {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.068),
+        3px 3px 5px rgba(0, 0, 0, 0.582) ;
+      }
+              
+            
+      dialog
+      {
+        background:cornflowerblue;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        box-shadow: -3px -3px 7px rgba(255, 255, 255, 0.068),
+        3px 3px 5px rgba(0, 0, 0, 0.582) ;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow: hidden;
+        overflow-y: scroll;
+        height:180px;
+        color: cornsilk;
+      }
+    </style>
+</head>
+<body style="background:#F3F3F3">
+  <header class="sticky-top shadow">
+    <nav class="navbar  navbar-expand-sm" style="background-color: #4c9ba5fb;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="color: white;">JS PROJECT</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="Hover" href="01_simple_cal.html">Simple Cal</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_eqfind.html">Eqn Find</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="navbtnActive" href="#">Eqn Solver</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_MultiCal.html">Multi Cal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="Hover" href="01_states.html">Statistic</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  </header>
+  <div class="container" id="text1">
+    <button id="show" onclick="learnAbout()" style="background-color: #4c9ba5fb; color: white"> Learn how to use (click here) </button>
+  </div>
+  <div id="howit">
+    <dialog open id="hide_con" style="background-color: #4c9ba5fb;">
+      <button id="hide" onclick="hideA()" style="background-color: #23cfe6fa; border-radius: 5px; border-color: #23cfe6fa; color: white;">Hide This!</button><br>
+      <h3  align="center"><b>Read below to understand how to use this calc</b></h3><br><br>
+      here , you write an equetion that you want to solve.<br><br>
+      Let guess equetion is h(x).You Want to find X that satisfy h(X)=k:<br><br>
+      take function f(x)=h(x)-k  ; write it in first box by selecting f(x).<br><br>
+      then select f'(x) & write f'(x) in second box.<br>
+      (you can't write by your keyboard,you have to use keyboard of cal)<br><br>
+      Then enter value of x(by your keyboard :)) : x is the value that <br>
+      give aprroximat ans of f(x)~ near to 0 .or h(x)~ near to k.<br>
+      then press ANS for answer.<br>
+      for write x<sup>N</sup> use pow function: x<sup>N</sup>=pow(x,N) <br>
+      <br>
+      <b>EXAMPLE :</b><br><br>
+      you write x*log(x)-sin(x)-2=0<br>
+      it's derivative 1+log(x)-cos(x),<br>
+      put any nearby value : x=2,<br>
+      Solution of x*log(x)-sin(x)=2 ; x=2.611<br><br>
+      for solution of 2nd degree polinomial you know formula,<br>
+      so please do not show your creativity here :) <br><br>
+      <b>HOPE YOU ENJOY THIS </b>
+    </dialog>
+   </div>
+
+   <div class="container" id="text" style="height: 70px; width: 500px; padding: 10px;">
+    <h1 align="center" style="font-family: cursive;" ><i><b>EQUATION SOLVER</b></i></h1>
+   </div>
+
+   <div class="container" id="calBox">
+    <div class="container" id="inputEq" style="font-size: 20px;">
+      <div class="container" id="inputBox">
+        <b>F(X) =</b><input id="eqn" class="eqni" readonly><b> = 0</b></b><br><br>
+        <p>X = </p><input type="text" id="inpux"><br><br>
+      <b>F'(x) =</b><input id="eqnd" class="eqni" readonly>
+      <form id="dx" name="f">
+          <select name="d" id="sel" style="background-color: #23cfe6fa;">
+              <option value="dx">F(X)</option>
+              <option value="real">F'(X)</option>
+          </select>
+      </form><br><br>
+      <span id="ansQ" class="res" style="background-color: #23cfe6fa;"><i>Ans :-</i> </span><br>
+      <span id="ansQ1" class="res" style="background-color: #23cfe6fa;"></span>
+      </div>
+    </div><br>
+    <div id="simps">
+         <button class="next" id="calBtn" onclick="eqnSolve()">ANS</button><br>
+         <button class="next" onclick="simpc('1')">1</button>
+         <button class="next" onclick="simpc('2')">2</button>
+         <button class="next" onclick="simpc('3')">3</button>
+         <button class="next" onclick="simpc('+')">+</button>
+         <button class="next" onclick="simpc('(')">(</button>
+         <button class="next" onclick="simpc(')')">)</button><br>
+         <button class="next" onclick="simpc('4')">4</button>
+         <button class="next" onclick="simpc('5')">5</button>
+         <button class="next" onclick="simpc('6')">6</button>
+         <button class="next" onclick="simpc('-')">-</button>
+         <button class="next" onclick="simpc('.')">.</button>
+         <button class="next" onclick="simpc(',')">,</button><br>
+         <button class="next" onclick="simpc('7')">7</button>
+         <button class="next" onclick="simpc('8')">8</button>
+         <button class="next" onclick="simpc('9')">9</button>
+         <button class="next" onclick="simpc('*')">*</button>
+         <button class="next" onclick="simpc('Math.PI')">&Pi;</button>
+         <button class="next" onclick="simpc('Math.E')">e</button><br>
+         <button class="next" onclick="simpc('ac')">AC</button>
+         <button class="next" onclick="simpc('0')">0</button>
+         <button class="next" onclick="simpc('back')">&larr;</button>
+         <button class="next" onclick="simpc('/')">/</button>
+         <button class="next" onclick="simpc('=')">=</button>
+         <button class="next" onclick="simpc('x')" style="margin-bottom: 10px;">X</button><br>
+         <button class="next" id="calBtn" onclick="simpc('log(')">log(x)</button>
+         <button class="next" id="calBtn" onclick="simpc('sin(')">sin(x)</button>
+         <button class="next" id="calBtn" onclick="simpc('cos(')">cos(x)</button>
+         <button class="next" id="calBtn" onclick="simpc('tan(')">tan(x)</button> 
+         <button class="next" id="calBtn" onclick="simpc('pow(')">pow(x,y)</button><p>(x<sup>y</sup>)</p>  
+    </div>
+   </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script type="text/javascript" src="eqsolver.js"></script>
+</html>
